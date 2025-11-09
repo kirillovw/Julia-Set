@@ -12,7 +12,7 @@ class JuliaSet:
     max_iter: int - maximum number of iterations to determine set membership.
     threshold: float - the escape radius.
     """
-    def __init__(self, f, x_left=-1, x_right=1, y_bottom=-1, y_top=1, prec=0.01, max_iter=50, threshold=10):
+    def __init__(self, f, x_left=-1, x_right=1, y_top=1, y_bottom=-1, prec=0.001, max_iter=50, threshold=10):
         self.f = f
         self.x_left = x_left
         self.x_right = x_right
@@ -37,7 +37,9 @@ class JuliaSet:
                 julia_set[y, x] = iteration
         self.julia_set = julia_set
         return julia_set
-    def plot(self):
-        plt.imshow(self.julia_set, cmap='hot')
+    def plot(self, save=None):
+        plt.imshow(self.julia_set)
         plt.axis('off')
-        plt.show()
+
+        if save is not None:
+            plt.imsave(save, self.julia_set)
