@@ -6,8 +6,9 @@ Set of initial conditions is from -1 to 1 by default, with escape radius of 10.
 
 # Examples
 
-!(Example)[https://github.com/kirillovw/Julia-Set/blob/master/examples/ex1.png?raw=true]
+!(Example)[/examples/ex1.png]
 
 # TODO
+
 
 
